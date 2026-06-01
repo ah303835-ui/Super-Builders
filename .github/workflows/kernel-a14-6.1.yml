@@ -1,4 +1,4 @@
-name: "Android 14 - Kernel 6.1"
+2name: "Android 14 - Kernel 6.1"
 
 permissions:
   contents: write
@@ -47,12 +47,9 @@ on:
         type: string
         default: ""
       device_codename:
-        description: "Device profile (generic = no identity spoofing)"
-        type: choice
-        options:
-          - generic
-          - lake
-        default: "lake"
+        description: "Device codename"
+        type: string
+        default: "malachite"
   workflow_call:
     inputs:
       ksu_variant:
@@ -81,7 +78,7 @@ on:
         default: ""
       device_codename:
         type: string
-        default: "lake"
+        default: "malachite"
 
 jobs:
   download-dependencies:
