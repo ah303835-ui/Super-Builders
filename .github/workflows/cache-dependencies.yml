@@ -4,8 +4,9 @@ permissions:
   actions: write
 
 on:
+  workflow_dispatch:
   workflow_call:
-
+  push:
 jobs:
   download-dependencies:
     name: Cache Dependencies
