@@ -16,6 +16,7 @@ on:
           # - MKSU  # no SUSFS branch exists — deferred
           - ReSukiSU
           - WKSU
+          - SukiSU-Spoofed
           # - RKSU  # no SUSFS integration — deferred
         default: "SukiSU"
       add_susfs:
