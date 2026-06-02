@@ -1,4 +1,4 @@
-name: "Android 16 - Kernel 6.12"
+2name: "Android 16 - Kernel 6.12"
 
 permissions:
   contents: write
@@ -96,7 +96,7 @@ jobs:
       matrix:
         include:
           - sub_level: "170" 
-            os_patch_level:  "2026-05"
+            os_patch_level:  "2026-04"
     uses: ./.github/workflows/build-sukisu.yml
     with:
       android_version: android16
