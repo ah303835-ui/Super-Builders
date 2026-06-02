@@ -99,6 +99,22 @@ jobs:
         name: kernel-patches
         path: kernel_patches
 
+    - name: Force SukiSU Version to 40707
+      run: |
+          KSU_PATH=$(find $GITHUB_WORKSPACE -type d -name "KernelSU" -o -name "kernelsu" | head -n 1)
+          if [ -z "$KSU_PATH" ]; then
+          cd $GITHUB_WORKSPACE/KernelSU 2>/dev/null || cd drivers/kernelsu 2>/dev/null || true
+          else
+          cd "$KSU_PATH"
+          fi
+          echo "Setting Version to 40707 for SukiSU Ultra Spoofed..."
+          if [ -f "Makefile" ]; then
+          sed -i 's/KERNELSU_VERSION .*/KERNELSU_VERSION := 40707/g' Makefile
+          fi
+          if [ -f "ksu.h" ]; then
+          sed -i 's/#define KERNELSU_VERSION .*/#define KERNELSU_VERSION 40707/g' ksu.h
+          fi
+
     - name: Download SukiSU Patch
       if: inputs.add_zram
       uses: actions/download-artifact@v8
