@@ -46,7 +46,7 @@ on:
       sukisu_commit:
         description: "SukiSU commit (empty = pinned default)"
         type: string
-        default: "v4.1.2-40707"
+        default: ""
       device_codename:
         description: "Device codename"
         type: string
