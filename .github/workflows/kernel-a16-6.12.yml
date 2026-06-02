@@ -50,7 +50,7 @@ on:
       device_codename:
         description: "Device profile codename"
         type: string
-        default: "malachite"
+        default: "malachite" 
   workflow_call:
     inputs:
       ksu_variant:
