@@ -16,6 +16,7 @@ on:
           # - MKSU  # no SUSFS branch exists — deferred
           - ReSukiSU
           - WKSU
+          - SukiSU-Spoofed
           # - RKSU  # no SUSFS integration — deferred
         default: "SukiSU"
       add_susfs:
@@ -47,12 +48,9 @@ on:
         type: string
         default: ""
       device_codename:
-        description: "Device profile (generic = no identity spoofing)"
-        type: choice
-        options:
-          - generic
-          - lake
-        default: "lake"
+        description: "Device profile codename"
+        type: string
+        default: "malachite"
   workflow_call:
     inputs:
       ksu_variant:
@@ -81,7 +79,7 @@ on:
         default: ""
       device_codename:
         type: string
-        default: "lake"
+        default: "malachite"
 
 jobs:
   download-dependencies:
