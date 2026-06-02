@@ -90,7 +90,7 @@ jobs:
 
   build-sukisu:
     needs: [download-dependencies]
-    if: inputs.ksu_variant == 'SukiSU'
+    if: inputs.ksu_variant == 'SukiSU' || inputs.ksu_variant == 'SukiSU-Spoofed'
     strategy:
       fail-fast: false
       matrix:
@@ -105,6 +105,8 @@ jobs:
             os_patch_level: "2025-09"
           - sub_level: "58"
             os_patch_level: "2025-12"
+          - sub_level: "170" 
+            os_patch_level:  "2026-05"
     uses: ./.github/workflows/build-sukisu.yml
     with:
       android_version: android16
