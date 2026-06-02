@@ -73,7 +73,7 @@ on:
         default: true
       add_kpm:
         type: boolean
-        default: false
+        default: true  
       sukisu_commit:
         type: string
         default: ""
