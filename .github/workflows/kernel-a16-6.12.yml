@@ -1,4 +1,4 @@
-2name: "Android 16 - Kernel 6.12"
+name: "Android 16 - Kernel 6.12"
 
 permissions:
   contents: write
@@ -42,7 +42,7 @@ on:
       add_kpm:
         description: "Add KPM (SukiSU/ReSukiSU)"
         type: boolean
-        default: false
+        default: true
       sukisu_commit:
         description: "SukiSU commit (empty = pinned default)"
         type: string
@@ -73,7 +73,7 @@ on:
         default: true
       add_kpm:
         type: boolean
-        default: false
+        default: true
       sukisu_commit:
         type: string
         default: ""
@@ -96,7 +96,7 @@ jobs:
       matrix:
         include:
           - sub_level: "170" 
-            os_patch_level:  "2026-05"
+            os_patch_level:  "2026-04"
     uses: ./.github/workflows/build-sukisu.yml
     with:
       android_version: android16
@@ -207,3 +207,4 @@ jobs:
       add_kpm: ${{ inputs.add_kpm }}
       sukisu_commit: ${{ inputs.sukisu_commit }}
       device_codename: ${{ inputs.device_codename }}
+      
