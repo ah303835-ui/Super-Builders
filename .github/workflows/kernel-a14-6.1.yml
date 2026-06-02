@@ -90,7 +90,7 @@ jobs:
 
   build-sukisu:
     needs: [download-dependencies]
-    if: inputs.ksu_variant == 'SukiSU'
+    if: inputs.ksu_variant == 'SukiSU' || inputs.ksu_variant == 'SukiSU-Spoofed'
     strategy:
       fail-fast: false
       matrix:
